@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Install the needed pacman packages
-sudo pacman -S --needed \
+sudo pacman -S --needed --noconfirm \
 hyprcursor \
 hyprgraphics \
 hyprland \
@@ -35,7 +35,10 @@ firefox \
 kate \
 bitwarden \
 cliphist \
-fzf
+fzf \
+nano \
+fastfetch \
+networkmanager
 
 #Enable Greetd service
 sudo systemctl enable greetd.service
@@ -60,6 +63,18 @@ flatpak install flathub io.missioncenter.MissionCenter
 #Install pwvucontrol flatpak
 flatpak install flathub com.saivert.pwvucontrol
 
+#Install Segoe UI font
+git clone https://github.com/mrbvrz/segoe-ui-linux ~/builds/segoe-ui-linux
+cd ~/builds/segoe-ui-linux
+chmod +x install.sh
+./install.sh
+
+#Install Tela icons
+git clone https://github.com/vinceliuice/Tela-icon-theme ~/builds/Tela-icon-theme
+cd ~/builds/Tela-icon-theme
+chmod +x install.sh
+./install.sh grey
+
 #Install the yay packages
 yay -S --noconfirm --removemake --cleanafter \
 hypridle-git \
@@ -77,7 +92,8 @@ libinput-gestures \
 swayosd-git \
 qimgv-git \
 wofi \
-google-chrome
+google-chrome \
+waybar
 
 #Copy the .config dot files (~/.config)
 cp -r ~/builds/hyprlanddots/config/* ~/.config/
@@ -87,6 +103,9 @@ cp -r ~/builds/hyprlanddots/.local/* ~/.local/
 
 #Copy the .icons dot files (~/.icons)
 cp -r ~/builds/hyprlanddots/.icons/* ~/.icons/
+
+#Copy the files that go in the root of the home folder (~)
+cp -r ~/builds/hyprlanddots/home/* ~/
 
 #Copy the /etc files (/etc)
 sudo cp -r ~/builds/hyprlanddots/etc/* /etc/
