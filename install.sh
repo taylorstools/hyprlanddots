@@ -44,7 +44,7 @@ sudo systemctl enable bluetooth.service
 #Install yay (AUR helper)
 git clone https://aur.archlinux.org/yay.git ~/builds/yay
 cd ~/builds/yay
-sudo makepkg -si
+makepkg -si
 
 #Create user directories in home folder
 xdg-user-dirs-update
