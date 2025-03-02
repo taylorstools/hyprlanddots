@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#Gotta add hyprbars
+#fix cursor theme
+
 #Install the needed pacman packages
 sudo pacman -S --needed --noconfirm \
 hyprcursor \
@@ -76,32 +79,52 @@ chmod +x install.sh
 ./install.sh grey
 
 #Install the yay packages
-yay -S --noconfirm --removemake --cleanafter \
-hypridle-git \
-hyprland-autoname-workspaces-git \
-hyprland-protocols-git \
-hyprlang-git \
-hyprsunset-git \
-hyprswitch \
-hyprutils-git \
-hyprwayland-scanner-git \
-swaync \
-brightnessctl \
-pamixer \
-libinput-gestures \
-swayosd-git \
-qimgv-git \
-wofi \
-google-chrome \
-waybar
+#yay -S --noconfirm --removemake --cleanafter \
+#hypridle-git \
+#hyprland-autoname-workspaces-git \
+#hyprland-protocols-git \
+#hyprlang-git \
+#hyprsunset-git \
+#hyprswitch \
+#hyprutils-git \
+#hyprwayland-scanner-git \
+#swaync \
+#brightnessctl \
+#pamixer \
+#libinput-gestures \
+#swayosd-git \
+#qimgv-git \
+#wofi \
+#google-chrome \
+#waybar
+
+yay -S --noconfirm --removemake --cleanafter hypridle-git
+yay -S --noconfirm --removemake --cleanafter hyprland-autoname-workspaces-git
+yay -S --noconfirm --removemake --cleanafter hyprland-protocols-git
+yay -S --noconfirm --removemake --cleanafter hyprlang-git
+yay -S --noconfirm --removemake --cleanafter hyprsunset-git
+yay -S --noconfirm --removemake --cleanafter hyprswitch
+yay -S --noconfirm --removemake --cleanafter hyprutils-git
+yay -S --noconfirm --removemake --cleanafter hyprwayland-scanner-git
+#yay -S --noconfirm --removemake --cleanafter swaync
+yay -S --noconfirm --removemake --cleanafter brightnessctl
+yay -S --noconfirm --removemake --cleanafter libinput-gestures
+yay -S --noconfirm --removemake --cleanafter swayosd-git
+yay -S --noconfirm --removemake --cleanafter qimgv-git
+yay -S --noconfirm --removemake --cleanafter wofi
+yay -S --noconfirm --removemake --cleanafter google-chrome
+yay -S --noconfirm --removemake --cleanafter waybar
 
 #Copy the .config dot files (~/.config)
+mkdir -p ~/.config/
 cp -r ~/builds/hyprlanddots/config/* ~/.config/
 
 #Copy the .local dot files (~/.local)
+mkdir -p ~/.local/
 cp -r ~/builds/hyprlanddots/.local/* ~/.local/
 
 #Copy the .icons dot files (~/.icons)
+mkdir -p ~/.icons/
 cp -r ~/builds/hyprlanddots/.icons/* ~/.icons/
 
 #Copy the files that go in the root of the home folder (~)
