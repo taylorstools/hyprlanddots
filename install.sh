@@ -105,6 +105,12 @@ hyprpm add https://github.com/hyprwm/hyprland-plugins
 hyprpm update
 hyprpm enable hyprbars
 
+#Add to input group for libinput-gestures
+sudo gpasswd -a $USER input
+
+#And the video group too
+sudo gpasswd -a $USER video
+
 #Copy the .config dot files (~/.config)
 mkdir -p ~/.config/
 cp -r ~/builds/hyprlanddots/config/* ~/.config/
@@ -121,6 +127,7 @@ cp -r ~/builds/hyprlanddots/.icons/* ~/.icons/
 cp -r ~/builds/hyprlanddots/home/.bashrc ~/
 
 #Copy the /etc files (/etc)
+sudo rm /etc/libinput-gestures.conf
 sudo cp -r ~/builds/hyprlanddots/etc/* /etc/
 
 #Enable NetworkManager
