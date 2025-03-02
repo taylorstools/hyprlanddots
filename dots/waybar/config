@@ -75,8 +75,8 @@
         "format-plugged": " {capacity}%",
         "format-alt": "{time} {icon}",
         "format-icons": [
-            "󰂎",
-            "󰁺",
+            "<span color='#DC143C'>󰂎</span>",
+            "<span color='#DC143C'>󰁺</span>",
             "󰁻",
             "󰁼",
             "󰁽",
