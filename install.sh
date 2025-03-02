@@ -41,16 +41,16 @@ sudo systemctl enable greetd.service
 #Enable bluetooth service
 sudo systemctl enable bluetooth.service
 
+#Install yay (AUR helper)
+git clone https://aur.archlinux.org/yay.git ~/builds/yay
+cd ~/builds/yay
+sudo makepkg -si
+
 #Create user directories in home folder
 xdg-user-dirs-update
 
 #Install Mission Center flatpak
 flatpak install flathub io.missioncenter.MissionCenter
-
-#Install yay (AUR helper)
-git clone https://aur.archlinux.org/yay.git ~/builds/yay
-cd ~/builds/yay
-sudo makepkg -si
 
 #Install the yay packages
 yay -S --noconfirm --removemake --cleanafter \
@@ -71,7 +71,7 @@ qimgv-git \
 google-chrome
 
 #Copy the .config dot files (~/.config)
-cp -r ~/builds/hyprlanddots/config/* ~/.fakeconfig/
+cp -r ~/builds/hyprlanddots/config/* ~/.config/
 
 #Copy the .local dot files (~/.local)
 cp -r ~/builds/hyprlanddots/.local/* ~/.local/
