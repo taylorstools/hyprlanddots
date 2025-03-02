@@ -105,7 +105,7 @@
                 " "
             ]
         },
-        "on-click": "pkill pwvucontrol || pwvucontrol"
+        "on-click": "pkill pwvucontrol || flatpak run com.saivert.pwvucontrol"
     },
     "clock": {
         "format": "{:%I:%M %p\n%m/%d/%Y}",

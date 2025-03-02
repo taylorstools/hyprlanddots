@@ -33,7 +33,9 @@ kitty \
 thunar \
 firefox \
 kate \
-bitwarden
+bitwarden \
+cliphist \
+fzf
 
 #Enable Greetd service
 sudo systemctl enable greetd.service
@@ -49,8 +51,14 @@ makepkg -si
 #Create user directories in home folder
 xdg-user-dirs-update
 
+#Add Flatpak repo
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
 #Install Mission Center flatpak
 flatpak install flathub io.missioncenter.MissionCenter
+
+#Install pwvucontrol flatpak
+flatpak install flathub com.saivert.pwvucontrol
 
 #Install the yay packages
 yay -S --noconfirm --removemake --cleanafter \
@@ -68,6 +76,7 @@ pamixer \
 libinput-gestures \
 swayosd-git \
 qimgv-git \
+wofi \
 google-chrome
 
 #Copy the .config dot files (~/.config)
