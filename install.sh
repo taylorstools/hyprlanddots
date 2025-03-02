@@ -1,8 +1,5 @@
 #!/bin/bash
 
-#Gotta add hyprbars
-#fix cursor theme
-
 #Install the needed pacman packages
 sudo pacman -S --needed --noconfirm \
 hyprcursor \
@@ -41,7 +38,12 @@ cliphist \
 fzf \
 nano \
 fastfetch \
-networkmanager
+networkmanager \
+network-manager-applet \
+cmake \
+meson \
+cpio \
+pkg-config
 
 #Enable Greetd service
 sudo systemctl enable greetd.service
@@ -114,6 +116,14 @@ yay -S --noconfirm --removemake --cleanafter qimgv-git
 yay -S --noconfirm --removemake --cleanafter wofi
 yay -S --noconfirm --removemake --cleanafter google-chrome
 yay -S --noconfirm --removemake --cleanafter waybar
+yay -S --noconfirm --removemake --cleanafter wlogout
+yay -S --noconfirm --removemake --cleanafter wallust
+
+#Hyprbars
+hyprpm update
+hyprpm add https://github.com/hyprwm/hyprland-plugins
+hyprpm update
+hyprpm enable hyprbars
 
 #Copy the .config dot files (~/.config)
 mkdir -p ~/.config/
@@ -128,7 +138,7 @@ mkdir -p ~/.icons/
 cp -r ~/builds/hyprlanddots/.icons/* ~/.icons/
 
 #Copy the files that go in the root of the home folder (~)
-cp -r ~/builds/hyprlanddots/home/* ~/
+cp -r ~/builds/hyprlanddots/home/.bashrc ~/
 
 #Copy the /etc files (/etc)
 sudo cp -r ~/builds/hyprlanddots/etc/* /etc/
