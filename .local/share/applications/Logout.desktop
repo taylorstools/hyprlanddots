@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Logout
 Comment=Logout system
-Icon=/home/taylor/.config/wlogout/icons/logout.png
+Icon=application-exit
 Exec=/home/taylor/.config/hypr/UserScripts/wlogout.sh
 TryExec=wlogout
 Terminal=false
