@@ -91,13 +91,14 @@ hyprswitch \
 hyprutils-git \
 hyprwayland-scanner-git \
 brightnessctl \
-pamixer \
 libinput-gestures \
 swayosd-git \
 qimgv-git \
 wofi \
 google-chrome \
-waybar
+waybar \
+wlogout \
+wallust
 
 #Hyprbars
 hyprpm update
