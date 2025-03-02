@@ -1,0 +1,165 @@
+version = "1.1.12"
+
+[format]
+dedup = true
+dedup_inactive_fullscreen = false
+delim = " "
+client = "{icon}{delim}"
+client_active = "{icon}"
+workspace = "{name} {delim}{clients}"
+workspace_empty = "{name}"
+client_dup = "{icon}{counter_sup}{delim}"
+client_dup_fullscreen = "[{icon}]{delim}{icon}{counter_unfocused_sup}"
+client_fullscreen = "<span color='#FFFFFF'>{icon}</span>{delim}"
+
+[class_active]
+DEFAULT=""
+"(?i)firefox" = "󰈹"
+
+# [initial_class]
+# "DEFAULT" = " {class}: {title}"
+# "(?i)alacritty" = "term"
+
+# [initial_class_active]
+# "(?i)alacritty" = "*TERM*"
+
+# regex captures support is supported
+[title_in_class."(?i)foot"]
+"emerge: (.+?/.+?)-.*" = "{match1}"
+
+[initial_title_in_class."alacritty"]
+"zsh" = "Zsh"
+
+[title_in_class."(firefox|chrom.*)"]
+"(?i)YouTube" = ""
+"(?i)twitch" = ""
+"(?i)Google Drive" = ""
+"(?i)Google Docs" = ""
+"(?i)Gmail" = "󰊫"
+"(?i)Amazon.com" = ""
+"(?i)Facebook" = ""
+
+[title_in_class."(?i)alacritty"]
+"(?i)nvim" = ""
+
+# [title_in_initial_class."(?i)alacritty"]
+# "(?i)neomutt" = "neomutt"
+
+# [initial_title_in_initial_class."(?i)alacritty"]
+# "(?i)neomutt" = "neomutt"
+
+# [initial_title."(?i)alacritty"]
+# "zsh" = "Zsh"
+
+# [initial_title_active."(?i)alacritty"]
+# "zsh" = "*Zsh*"
+
+[workspaces_name]
+0 = "0"
+1 = "󰬺"
+2 = "󰬻"
+3 = "󰬼"
+4 = "󰬽"
+5 = "󰬾"
+6 = "󰬿"
+7 = "󰭀"
+8 = "󰭁"
+9 = "󰭂"
+10 = "10"
+
+[class]
+DEFAULT = ""
+"(?i)firefox" = "󰈹"
+"(?i)alacritty" = ""
+"(?i)kitty" = ""
+"(?i)chrome" = ""
+wofi = ""
+bleachbit = ""
+blueman-manager=""
+burp-startburp = ""
+calibre-gui = " "
+"chrome-faolnafnngnfdaknnbpnkhgohbobgegn-default" = ""
+chromium = ""
+"(?i)MissionCenter" = "󰨇"
+"Gimp-2.10" = ""
+code-oss = ""
+cssh = " "
+darktable = ""
+discord = ""
+dmenu-clipboard = ""
+dmenu-pass = " "
+duolingo = ""
+Done=""
+element = ""
+fontforge = ""
+gcr-prompter = ""
+gedit = ""
+kate = ""
+kwrite = ""
+gsimplecalc = ""
+"jetbrains-(.*)" = ""
+IDA="󰒃"
+"kak" = ""
+kicad = ""
+"(?i)waydroid.*" = "droid"
+obsidian = ""
+"dmenu-emoji" = ""
+"dmenu-browser" = ""
+"dmenu-pass generator" = ""
+"qalculate-gtk" = ""
+krita = ""
+libreoffice-calc = ""
+libreoffice-impress = ""
+libreoffice-startcenter = ""
+libreoffice-writer = ""
+molotov = ""
+mpv = ""
+neomutt = ""
+nm-connection-editor = ""
+nvim=""
+org-ksnip-ksnip = ""
+org-qutebrowser-qutebrowser = ""
+org-telegram-desktop = ""
+"org.pwmt.zathura"= ""
+paperwork = ""
+pavucontrol = ""
+personal = ""
+plexamp = ""
+protonvpn = ""
+qutepreview = ""
+rapid-photo-downloader = ""
+remote-viewer = ""
+sandboxed-tor-browser = ""
+scli = ""
+shopping = ""
+Signal = ""
+"(?i)slack" = ""
+snappergui = ""
+songrec = ""
+"(?i)spotify" = ""
+steam = ""
+streamlink-twitch-gui = ""
+sun-awt-x11-xframepeer = ""
+swappy = ""
+taskwarrior-tui = ""
+telegramdesktop = ""
+thunar=""
+".*transmission.*" = ""
+udiskie = ""
+vimiv = ""
+virt-manager = ""
+vlc = ""
+vncviewer = ""
+wayvnc = "󰀄"
+whatsapp-desktop = ""
+whatsapp-nativefier-d52542 = ""
+wire = "󰁀"
+wireshark-gtk = ""
+wlfreerdp = "󰀄"
+work = ""
+xplr = ""
+nemo = ""
+zoom = ""
+
+[exclude]
+"" = "^$" # prevent displaying clients with empty class
