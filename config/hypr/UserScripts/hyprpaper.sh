@@ -21,13 +21,13 @@ rm "SYMLINKED_WALLPAPER"
 ln -sf "$WALLPAPER" "$HOME/.config/wallpapers/.current_wallpaper"
 
 #Set output image to variable
-WLOGOUTOUTPUT="$HOME/.config/wlogout/wallpaper_wlogout.png"
+WALLPAPEROUTPUT="$HOME/.config/wallpapers/.current_lockscreen.png"
 
 #Remove existing output image
-rm "$WLOGOUTOUTPUT"
+rm "$WALLPAPEROUTPUT"
 
 #Make changes to current wallpaper and save to output image location
-magick "$SYMLINKED_WALLPAPER" -fill black -colorize 80% -blur 0x20 "$WLOGOUTOUTPUT"
+magick "$SYMLINKED_WALLPAPER" -fill black -colorize 75% -blur 0x15 "$WALLPAPEROUTPUT"
 
 #Run Wallust
 wallust run "$WALLPAPER"

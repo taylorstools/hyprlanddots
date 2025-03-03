@@ -30,7 +30,7 @@ by Stephan Raabe (2023)
 }
 
 window {
-	background-image: url("/home/taylor/.config/wlogout/wallpaper_wlogout.png");
+	background-image: url("/home/taylor/.config/wallpapers/.current_lockscreen.png");
 	background-size: cover;
 	font-size: 18pt;
 }
