@@ -134,6 +134,9 @@ cp -r ~/builds/hyprlanddots/home/.bashrc ~/
 sudo rm /etc/libinput-gestures.conf
 sudo cp -r ~/builds/hyprlanddots/etc/* /etc/
 
+#Set thunar as default file browser
+xdg-mime default thunar.desktop inode/directory
+
 #Enable NetworkManager
 sudo systemctl enable NetworkManager.service
 
