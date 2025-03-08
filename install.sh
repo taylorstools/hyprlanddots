@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#Make it so user doesn't have to type password to use sudo
+echo "$USER ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
+
 #Install the needed pacman packages
 sudo pacman -S --needed --noconfirm \
 hyprcursor \
