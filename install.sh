@@ -34,6 +34,8 @@ flatpak \
 greetd \
 kitty \
 thunar \
+file-roller \
+thunar-archive-plugin \
 firefox \
 kate \
 bitwarden \
