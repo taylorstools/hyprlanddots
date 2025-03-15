@@ -10,5 +10,5 @@ USERSCRIPTS="$HOME/.config/hypr/UserScripts"
 if echo "$window_titles" | grep -q "FuzzyRunner"; then
     hyprctl dispatch closewindow title:FuzzyRunner
 else
-    kitty --detach --title FuzzyRunner $USERSCRIPTS/FuzzyRunner.sh & sleep 0.5
+    kitty --detach --title FuzzyRunner $USERSCRIPTS/FuzzyRunner.sh & sleep 0.75
 fi
