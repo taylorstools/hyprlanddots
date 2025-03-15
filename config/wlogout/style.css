@@ -32,6 +32,7 @@ by Stephan Raabe (2023)
 window {
 	background-image: url("/home/taylor/.config/wallpapers/.current_lockscreen.png");
 	background-size: cover;
+	background-position: center;
 	font-size: 18pt;
 }
 
