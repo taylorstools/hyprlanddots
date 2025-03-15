@@ -16,6 +16,7 @@ chmod a+x ./install.sh
 These steps assume you cloned the repo to ~/builds:
 ```sh
 yay -S refi2nd
+refind-install
 sudo cp -r ~/builds/hyprlanddots/boot/* /boot/
 sudo pacman -R grub
 sudo rm -rf /boot/grub
