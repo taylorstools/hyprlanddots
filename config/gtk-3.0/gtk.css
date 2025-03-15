@@ -1,5 +1,7 @@
 @import "/home/taylor/.config/waybar/wallust/colors-waybar.css";
 
+@define-color theme_selected_bg_color @color2;
+
 #input {
 border: 0;
 box-shadow: none;
@@ -11,4 +13,35 @@ padding-bottom: 5px;
 border: 0;
 box-shadow: none;
 border-bottom: 2px solid @color13;
+}
+
+.thunar .view {
+background-color: #000000;
+}
+/* sidebar */
+.thunar .sidebar .view {
+background-color: #000000;
+}
+/* main view */
+.thunar .standard-view .view {
+background-color: #000000;
+}
+/* status bar */
+.thunar grid paned grid {
+background-color: #000000;
+}
+/* toolbar */
+.thunar toolbar, .thunar toolbar entry {
+background-color: #000000;
+}
+.thunar .standard-view .view:selected {
+color: #ffffff;
+}
+.thunar .view:selected { background-color: @color2; color: #ffffff; }
+.thunar .view .rubberband {
+background: rgba(255,255,255,0.3);
+border-color: @color2
+}
+.thunar menubar {
+background-color: #000000;
 }
