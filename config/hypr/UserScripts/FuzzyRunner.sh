@@ -15,6 +15,7 @@ if [ -n "$selected" ]; then
     # Open the directory with Thunar
     thunar "$selected"
   else
-    xdg-open "$selected" & sleep 0.5
+    #xdg-open "$selected" & sleep 5
+    nohup xdg-open "$selected" >/dev/null 2>&1 & disown & sleep 1
   fi
 fi
