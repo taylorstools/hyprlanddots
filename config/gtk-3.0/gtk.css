@@ -1,6 +1,6 @@
 @import "/home/taylor/.config/waybar/wallust/colors-waybar.css";
 
-@define-color theme_selected_bg_color @color2;
+@define-color theme_selected_bg_color @color13;
 
 #input {
 border: 0;
@@ -34,13 +34,13 @@ background-color: #000000;
 .thunar toolbar, .thunar toolbar entry {
 background-color: #000000;
 }
-.thunar .standard-view .view:selected {
+.thunar .view:selected {
+background-color: @color13;
 color: #ffffff;
 }
-.thunar .view:selected { background-color: @color2; color: #ffffff; }
 .thunar .view .rubberband {
 background: rgba(255,255,255,0.3);
-border-color: @color2
+border-color: @color13;
 }
 .thunar menubar {
 background-color: #000000;
