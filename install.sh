@@ -136,8 +136,10 @@ cp -r ~/builds/hyprlanddots/home/.bashrc ~/
 sudo rm /etc/libinput-gestures.conf
 sudo cp -r ~/builds/hyprlanddots/etc/* /etc/
 
-#Set thunar as default file browser
+#Set defaults
 xdg-mime default thunar.desktop inode/directory
+xdg-mime default org.kde.kate.desktop application/json
+xdg-mime default qimgv.desktop image/png image/jpeg
 
 #Enable NetworkManager
 sudo systemctl enable NetworkManager.service
