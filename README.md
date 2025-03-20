@@ -29,6 +29,8 @@ efibootmgr
 #Delete the boot entry that corresponds to Grub. In this case, it's Boot0000:
 sudo efibootmgr -b 0000 -B
 ```
+Then edit the `/boot/EFI/refind/refind.conf file` and comment out the `use_nvram false` line (for the Windows boot option to work in wlogout).
+
 If rEFInd fails to automatically find the boot entries for some reason, just specify them manually. Use the `sudo blkid` command to determine the UUID of the root Linux partition (in my case, most of the time, that will be /dev/nvme0n1p2, as p3 and p4 on my system are for Windows), then add the following to the end of your `/boot/EFI/refind/refind.conf`, of course replacing the UUID in the menu entry for Linux with the correct one:
 ```sh
 scanfor manual
