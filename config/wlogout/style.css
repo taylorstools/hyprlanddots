@@ -135,3 +135,16 @@ Buttons
 	color: @color2;
 	background-size: 80px;
 }
+
+#windows {
+	margin: 10px;
+	border-radius: 20px;
+	background-image: image(url("icons/light/windows.png"));
+	color: @color13;
+	background-size: 60px;
+}
+#windows:hover {
+	background-image: image(url("icons/dark/windows.png"));
+	color: @color2;
+	background-size: 80px;
+}

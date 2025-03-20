@@ -1,19 +1,19 @@
 {
     "label" : "lock",
     "action" : "~/.config/hypr/scripts/LockScreen.sh",
-    "text" : "Lock",
+    "text" : "  Lock  ",
     "keybind" : "l"
 }
 {
     "label" : "logout",
     "action" : "hyprctl dispatch exit",
-    "text" : "Logout",
+    "text" : " Logout ",
     "keybind" : "e"
 }
 {
     "label" : "sleep",
     "action" : "~/.config/hypr/scripts/Sleep.sh",
-    "text" : "Sleep",
+    "text" : " Sleep ",
     "keybind" : "z"
 }
 {
@@ -27,4 +27,10 @@
     "action" : "systemctl reboot",
     "text" : "Reboot",
     "keybind" : "r"
+}
+{
+    "label" : "windows",
+    "action" : "sudo ~/.config/hypr/UserScripts/boottowindows.sh",
+    "text" : "Windows",
+    "keybind" : "w"
 }
