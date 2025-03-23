@@ -1,3 +1,3 @@
 #!/bin/bash
 
-wlogout --buttons-per-row 5
+wlogout --buttons-per-row 6
