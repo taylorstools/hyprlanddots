@@ -111,6 +111,9 @@ hyprpm add https://github.com/hyprwm/hyprland-plugins
 hyprpm update
 hyprpm enable hyprbars
 
+#Enable NetworkManager
+sudo systemctl enable NetworkManager.service
+
 #Add to input group for libinput-gestures
 sudo gpasswd -a $USER input
 
@@ -133,16 +136,12 @@ cp -r ~/builds/hyprlanddots/.icons/* ~/.icons/
 cp -r ~/builds/hyprlanddots/home/.bashrc ~/
 
 #Copy the /etc files (/etc)
-sudo rm /etc/libinput-gestures.conf
 sudo cp -r ~/builds/hyprlanddots/etc/* /etc/
 
 #Set defaults
 xdg-mime default thunar.desktop inode/directory
 xdg-mime default org.kde.kate.desktop application/json
 xdg-mime default qimgv.desktop image/png image/jpeg
-
-#Enable NetworkManager
-sudo systemctl enable NetworkManager.service
 
 echo
 echo DONE. You should reboot now.
