@@ -46,8 +46,8 @@ wlogouticons="$HOME/.config/wlogout/icons/originals"
 #Extract color13 value and convert it to a hex format
 color13=$(grep '^\$color13' "$config_file" | sed -E 's/\$color13 = rgb\((.*)\)/#\1/')
 
-#Same for color2
-color2=$(grep '^\$color2' "$config_file" | sed -E 's/\$color2 = rgb\((.*)\)/#\1/')
+#Same for foreground color
+foreground=$(grep '^\$foreground' "$config_file" | sed -E 's/\$foreground = rgb\((.*)\)/#\1/')
 
 #CREATE LIGHT COLOR VERSIONS
 #Ensure output directory exists
@@ -59,6 +59,18 @@ mkdir -p "$wlogouticonslight"
 for file in "$wlogouticons"/*.png; do
     filename=$(basename "$file")
     magick "$file" -fill "$color13" -opaque "#FFFFFF" "$wlogouticonslight/$filename"
+done
+
+#CREATE HOVER COLOR VERSIONS
+#Ensure output directory exists
+wlogouticonshover="$HOME/.config/wlogout/icons/hover"
+
+mkdir -p "$wlogouticonshover"
+
+# Process each PNG file
+for file in "$wlogouticons"/*.png; do
+    filename=$(basename "$file")
+    magick "$file" -fill "$foreground" -opaque "#FFFFFF" "$wlogouticonshover/$filename"
 done
 
 #Refresh Waybar, etc.
