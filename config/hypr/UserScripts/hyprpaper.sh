@@ -61,18 +61,6 @@ for file in "$wlogouticons"/*.png; do
     magick "$file" -fill "$color13" -opaque "#FFFFFF" "$wlogouticonslight/$filename"
 done
 
-#CREATE DARK COLOR VERSIONS
-#Ensure output directory exists
-wlogouticonsdark="$HOME/.config/wlogout/icons/dark"
-
-mkdir -p "$wlogouticonsdark"
-
-# Process each PNG file
-for file in "$wlogouticons"/*.png; do
-    filename=$(basename "$file")
-    magick "$file" -fill "$color2" -opaque "#FFFFFF" "$wlogouticonsdark/$filename"
-done
-
 #Refresh Waybar, etc.
 scriptsDir="$HOME/.config/hypr/scripts"
 $scriptsDir/Refresh.sh
