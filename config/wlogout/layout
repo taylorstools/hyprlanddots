@@ -13,7 +13,7 @@
 {
     "label" : "sleep",
     "action" : "~/.config/hypr/scripts/Sleep.sh",
-    "text" : " Sleep ",
+    "text" : "  Sleep  ",
     "keybind" : "z"
 }
 {
