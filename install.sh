@@ -3,6 +3,12 @@
 #Make it so user doesn't have to type password to use sudo
 echo "$USER ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
 
+#Rank mirrors
+sudo pacman -S reflector --noconfirm
+sudo reflector --latest 20 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+sudo pacman -Syy
+sudo pacman -Syu
+
 #Install the needed pacman packages
 sudo pacman -S --needed --noconfirm \
 hyprcursor \
