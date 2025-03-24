@@ -36,7 +36,7 @@
 
 window#waybar {
   background:  @bg_main;
-  border-top: 1px solid @border_main;
+  /* border-top: 1px solid @border_main; */
   color: @content_main;
 }
 
