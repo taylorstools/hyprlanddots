@@ -2,6 +2,10 @@
 
 @define-color theme_selected_bg_color @color13;
 
+* {
+outline: none;
+}
+
 #input {
 border: 0;
 box-shadow: none;
