@@ -77,7 +77,7 @@ Buttons
 }
 #lock:hover {
 	background-image: image(url("icons/originals/lock.png"));
-	color: #fff;
+	color: @foreground;
 	background-size: 80px;
 }
 
@@ -90,7 +90,7 @@ Buttons
 }
 #logout:hover {
 	background-image: image(url("icons/originals/logout.png"));
-	color: #fff;
+	color: @foreground;
 	background-size: 80px;
 }
 
@@ -103,7 +103,7 @@ Buttons
 }
 #sleep:hover {
 	background-image: image(url("icons/originals/sleep.png"));
-	color: #fff;
+	color: @foreground;
 	background-size: 80px;
 }
 
@@ -116,7 +116,7 @@ Buttons
 }
 #shutdown:hover {
 	background-image: image(url("icons/originals/shutdown.png"));
-	color: #fff;
+	color: @foreground;
 	background-size: 80px;
 }
 
@@ -129,7 +129,7 @@ Buttons
 }
 #reboot:hover {
 	background-image: image(url("icons/originals/reboot.png"));
-	color: #fff;
+	color: @foreground;
 	background-size: 80px;
 }
 
@@ -142,6 +142,6 @@ Buttons
 }
 #windows:hover {
 	background-image: image(url("icons/originals/windows.png"));
-	color: #fff;
+	color: @foreground;
 	background-size: 80px;
 }
