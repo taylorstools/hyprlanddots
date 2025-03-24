@@ -23,9 +23,9 @@ by Stephan Raabe (2023)
 
 * {
     font-family: "Segoe UI Light", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-	font-size: 20pt;
+	font-size: 16pt;
 	background-image: none;
-	transition: 20ms;
+	transition: 100ms;
 	box-shadow: none;
 }
 
@@ -33,7 +33,6 @@ window {
 	background-image: url("/home/taylor/.config/wallpapers/.current_lockscreen.png");
 	background-size: cover;
 	background-position: center;
-	font-size: 18pt;
 }
 
 button {
@@ -43,21 +42,19 @@ button {
 	/* animation: gradient_f 20s ease-in infinite; */
 	border-radius: 80px; /* Increased border radius for a more rounded look */
 	border:0px;
-	transition: all 0.1s cubic-bezier(.55, 0.0, .28, 1.682), box-shadow 0.1s ease-in-out, background-color 0.1s ease-in-out;
+	transition: all 0.2s cubic-bezier(.55, 0.0, .28, 1.682), box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
 button:focus {
-    background-size: 120px;
-	border: 0px;
 }
 
 button:hover {
-    background-color: #fff;
+    /* background-color: #fff; */
 	opacity: 0.8;
     color: #000;
     margin: 30px;
     border-radius: 80px;
-    box-shadow: 0 0 50px #fff;
+    /* box-shadow: 0 0 50px #fff; */
 }
 
 /* Adjust the size of the icon or content inside the button */
@@ -79,8 +76,8 @@ Buttons
 	background-size: 60px;
 }
 #lock:hover {
-	background-image: image(url("icons/dark/lock.png"));
-	color: @color2;
+	background-image: image(url("icons/originals/lock.png"));
+	color: #fff;
 	background-size: 80px;
 }
 
@@ -92,8 +89,8 @@ Buttons
 	background-size: 60px;
 }
 #logout:hover {
-	background-image: image(url("icons/dark/logout.png"));
-	color: @color2;
+	background-image: image(url("icons/originals/logout.png"));
+	color: #fff;
 	background-size: 80px;
 }
 
@@ -105,8 +102,8 @@ Buttons
 	background-size: 60px;
 }
 #sleep:hover {
-	background-image: image(url("icons/dark/sleep.png"));
-	color: @color2;
+	background-image: image(url("icons/originals/sleep.png"));
+	color: #fff;
 	background-size: 80px;
 }
 
@@ -118,8 +115,8 @@ Buttons
 	background-size: 60px;
 }
 #shutdown:hover {
-	background-image: image(url("icons/dark/shutdown.png"));
-	color: @color2;
+	background-image: image(url("icons/originals/shutdown.png"));
+	color: #fff;
 	background-size: 80px;
 }
 
@@ -131,8 +128,8 @@ Buttons
 	background-size: 60px;
 }
 #reboot:hover {
-	background-image: image(url("icons/dark/reboot.png"));
-	color: @color2;
+	background-image: image(url("icons/originals/reboot.png"));
+	color: #fff;
 	background-size: 80px;
 }
 
@@ -144,7 +141,7 @@ Buttons
 	background-size: 60px;
 }
 #windows:hover {
-	background-image: image(url("icons/dark/windows.png"));
-	color: @color2;
+	background-image: image(url("icons/originals/windows.png"));
+	color: #fff;
 	background-size: 80px;
 }
