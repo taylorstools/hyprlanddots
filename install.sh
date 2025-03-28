@@ -109,7 +109,8 @@ wofi \
 google-chrome \
 waybar \
 wlogout \
-wallust
+wallust \
+asusctl
 
 #Hyprbars
 hyprpm update
