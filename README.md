@@ -51,3 +51,7 @@ menuentry "Windows" {
 ## Creating "Boot to Arch Linux" Shortcut in Windows
 
 Clone the "Windows" folder from this repo to some location within Windows that you won't accidentally delete later. Right click the `SwitchToArch.vbs` script > Send to > Desktop (create shortcut). Rename the shortcut on your desktop to whatever you want. Right click the shortcut > Properties > Change Icon... > select the `ArchLinux.ico` file within the folder that contains the vbs script, then Apply. Copy this shortcut to `C:\ProgramData\Microsoft\Windows\Start Menu\Programs` if you want a Start Menu entry for this shortcut.
+
+## Switch to NVIDIA Proprietary Driver
+
+Follow this guide: [Arch Linux NVIDIA drivers installation guide](https://github.com/korvahannu/arch-nvidia-drivers-installation-guide).
