@@ -25,7 +25,7 @@ by Stephan Raabe (2023)
     font-family: "Segoe UI Light", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
 	font-size: 16pt;
 	background-image: none;
-	transition: 100ms;
+	transition: 200ms;
 	box-shadow: none;
 }
 
@@ -76,9 +76,9 @@ Buttons
 	background-size: 60px;
 }
 #lock:hover {
-	background-image: image(url("icons/originals/lock.png"));
+	background-image: image(url("icons/hover/lock.png"));
 	color: @foreground;
-	background-size: 80px;
+	background-size: 85px;
 }
 
 #logout {
@@ -89,9 +89,9 @@ Buttons
 	background-size: 60px;
 }
 #logout:hover {
-	background-image: image(url("icons/originals/logout.png"));
+	background-image: image(url("icons/hover/logout.png"));
 	color: @foreground;
-	background-size: 80px;
+	background-size: 85px;
 }
 
 #sleep {
@@ -102,9 +102,9 @@ Buttons
 	background-size: 60px;
 }
 #sleep:hover {
-	background-image: image(url("icons/originals/sleep.png"));
+	background-image: image(url("icons/hover/sleep.png"));
 	color: @foreground;
-	background-size: 80px;
+	background-size: 85px;
 }
 
 #shutdown {
@@ -115,9 +115,9 @@ Buttons
 	background-size: 60px;
 }
 #shutdown:hover {
-	background-image: image(url("icons/originals/shutdown.png"));
+	background-image: image(url("icons/hover/shutdown.png"));
 	color: @foreground;
-	background-size: 80px;
+	background-size: 85px;
 }
 
 #reboot {
@@ -128,9 +128,9 @@ Buttons
 	background-size: 60px;
 }
 #reboot:hover {
-	background-image: image(url("icons/originals/reboot.png"));
+	background-image: image(url("icons/hover/reboot.png"));
 	color: @foreground;
-	background-size: 80px;
+	background-size: 85px;
 }
 
 #windows {
@@ -141,7 +141,7 @@ Buttons
 	background-size: 60px;
 }
 #windows:hover {
-	background-image: image(url("icons/originals/windows.png"));
+	background-image: image(url("icons/hover/windows.png"));
 	color: @foreground;
-	background-size: 80px;
+	background-size: 85px;
 }
