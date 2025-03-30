@@ -19,6 +19,8 @@ esac
 # Path to the bash it configuration
 export BASH_IT="/home/taylor/.bash_it"
 
+export XDG_CONFIG_HOME="$HOME/.config"
+
 # Lock and Load a custom theme file.
 # Leave empty to disable theming.
 # location "$BASH_IT"/themes/
