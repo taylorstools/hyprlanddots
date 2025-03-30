@@ -27,6 +27,7 @@
     "custom/os_button": {
         "format": "󰣇",
         "on-click": "pkill wofi || wofi --show drun --normal-window",
+        "on-click-right": "~/.config/hypr/UserScripts/StartRightClick.sh",
         "tooltip": false
     },
     "custom/filesicon": {
