@@ -18,16 +18,6 @@ These steps assume you cloned the repo to ~/builds:
 yay -S refi2nd
 refind-install
 sudo cp -r ~/builds/hyprlanddots/boot/* /boot/
-sudo pacman -R grub
-sudo rm -rf /boot/grub
-sudo rm -rf /boot/EFI/EFI
-```
-Then use efibootmgr to remove the Grub boot entry:
-```sh
-#To see the current boot options
-efibootmgr
-#Delete the boot entry that corresponds to Grub. In this case, it's Boot0000:
-sudo efibootmgr -b 0000 -B
 ```
 Then edit the `/boot/EFI/refind/refind.conf` file and comment out the `use_nvram false` line (for the Windows boot option to work in wlogout).
 
@@ -47,6 +37,21 @@ menuentry "Windows" {
     loader \EFI\Microsoft\Boot\bootmgfw.efi
 }
 ```
+The above works if you want to use the `vmlinuz-linux` loader. In my case, I opt to continue using grub to be able to change kernel boot parameters (especially for stuff like NVIDIA drivers):
+```sh
+scanfor manual
+
+menuentry "Arch Linux" {
+    icon /EFI/refind/themes/rEFInd-minimal/icons/os_arch.png
+    loader /EFI/GRUB/grubx64.efi
+}
+
+menuentry "Windows" {
+    icon /EFI/refind/themes/rEFInd-minimal/icons/os_win.png
+    loader \EFI\Microsoft\Boot\bootmgfw.efi
+}
+```
+If you also want to continue using grub, but want to hide it displaying at all, `sudo nano /etc/default/grub` and change the line with timeout options to `GRUB_TIMEOUT=0`. Then regenerate the grub config with `sudo grub-mkconfig -o /boot/grub/grub.cfg`.
 
 ## Creating "Boot to Arch Linux" Shortcut in Windows
 
