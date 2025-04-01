@@ -56,7 +56,13 @@ meson \
 cpio \
 pkg-config \
 gparted \
-tlp
+tlp \
+mesa \
+lib32-mesa \
+vulkan-radeon \
+lib32-vulkan-radeon \
+libva-mesa-driver \
+libva-utils
 
 #Enable Greetd service
 sudo systemctl enable greetd.service
