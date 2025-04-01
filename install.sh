@@ -55,7 +55,8 @@ cmake \
 meson \
 cpio \
 pkg-config \
-gparted
+gparted \
+tlp
 
 #Enable Greetd service
 sudo systemctl enable greetd.service
@@ -147,6 +148,10 @@ sudo cp -r ~/builds/hyprlanddots/etc/* /etc/
 xdg-mime default thunar.desktop inode/directory
 xdg-mime default org.kde.kate.desktop application/json
 xdg-mime default qimgv.desktop image/png image/jpeg
+
+#Enable tlp
+sudo systemctl enable --now tlp
+sudo tlp start
 
 #Enable NetworkManager
 sudo systemctl enable NetworkManager.service
