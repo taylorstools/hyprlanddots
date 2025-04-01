@@ -146,7 +146,7 @@ sudo cp -r ~/builds/hyprlanddots/etc/* /etc/
 
 #Set defaults
 xdg-mime default thunar.desktop inode/directory
-xdg-mime default org.kde.kate.desktop application/json
+xdg-mime default org.kde.kate.desktop application/json text/plain text/x-shellscript
 xdg-mime default qimgv.desktop image/png image/jpeg
 
 #Enable tlp
