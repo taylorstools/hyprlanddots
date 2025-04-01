@@ -54,7 +54,8 @@ network-manager-applet \
 cmake \
 meson \
 cpio \
-pkg-config
+pkg-config \
+gparted
 
 #Enable Greetd service
 sudo systemctl enable greetd.service
