@@ -62,7 +62,10 @@ lib32-mesa \
 vulkan-radeon \
 lib32-vulkan-radeon \
 libva-mesa-driver \
-libva-utils
+libva-utils \
+ntfs-3g \
+gnome-keyring \
+libsecret
 
 #Enable Greetd service
 sudo systemctl enable greetd.service
