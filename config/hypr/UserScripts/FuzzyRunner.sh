@@ -13,7 +13,7 @@ selected=$(fd . --hidden -tf -td --case-sensitive / | fzf --layout reverse --inf
 if [ -n "$selected" ]; then
   if [ -d "$selected" ]; then
     # Open the directory with Thunar
-    thunar "$selected"
+    nohup thunar "$selected" >/dev/null 2>&1 & disown & sleep 1
   else
     #xdg-open "$selected" & sleep 5
     nohup xdg-open "$selected" >/dev/null 2>&1 & disown & sleep 1
