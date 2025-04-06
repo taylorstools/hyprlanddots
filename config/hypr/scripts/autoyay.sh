@@ -15,4 +15,6 @@ rm "/var/lib/pacman/db.lck"
 yay -Syu --noconfirm --removemake --cleanafter > "$LOG_FILE" 2>&1
 
 #Cleanup unused packages
-sudo pacman -R $(pacman -Qdtq) --noconfirm
+sudo pacman -R $(pacman -Qdtq) --noconfirm >> "$LOG_FILE"
+
+echo "UPGRADE COMPLETE." >> "$LOG_FILE"
