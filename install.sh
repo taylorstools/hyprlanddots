@@ -32,7 +32,7 @@ bluez \
 bluez-libs \
 bluez-utils \
 ttf-fira-code \
-exa \
+eza \
 gvfs-smb \
 tumbler \
 xdg-user-dirs \
@@ -54,14 +54,13 @@ network-manager-applet \
 cmake \
 meson \
 cpio \
-pkg-config \
+pkgconf \
 gparted \
 tlp \
 mesa \
 lib32-mesa \
 vulkan-radeon \
 lib32-vulkan-radeon \
-libva-mesa-driver \
 libva-utils \
 ntfs-3g \
 gnome-keyring \
