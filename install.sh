@@ -72,6 +72,7 @@ packages=(
     ntfs-3g
     gnome-keyring
     libsecret
+    go
 )
 
 #Install the needed pacman packages
