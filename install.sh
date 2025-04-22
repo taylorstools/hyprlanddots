@@ -6,65 +6,78 @@ echo "$USER ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
 #Rank mirrors
 sudo pacman -S reflector --noconfirm
 sudo reflector --latest 20 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
-sudo pacman -Syy
+
+#Perform upgrade
 sudo pacman -Syu
 
+packages=(
+    hyprcursor
+    hyprgraphics
+    hyprland
+    hyprland-qt-support
+    hyprland-qtutils
+    hyprlock
+    hyprpaper
+    hyprpicker
+    hyprpolkitagent
+    hypridle
+    hyprland-protocols
+    hyprlang
+    hyprsunset
+    hyprutils
+    hyprwayland-scanner
+    brightnessctl
+    xdg-desktop-portal-hyprland
+    socat
+    jq
+    fd
+    nwg-look
+    ttf-jetbrains-mono-nerd
+    imagemagick
+    blueman
+    bluez
+    bluez-libs
+    bluez-utils
+    ttf-fira-code
+    eza
+    gvfs-smb
+    tumbler
+    xdg-user-dirs
+    flatpak
+    greetd
+    kitty
+    thunar
+    file-roller
+    thunar-archive-plugin
+    firefox
+    kate
+    bitwarden
+    cliphist
+    fzf
+    nano
+    fastfetch
+    networkmanager
+    network-manager-applet
+    cmake
+    meson
+    cpio
+    pkgconf
+    gparted
+    tlp
+    mesa
+    lib32-mesa
+    vulkan-radeon
+    lib32-vulkan-radeon
+    libva-utils
+    ntfs-3g
+    gnome-keyring
+    libsecret
+)
+
 #Install the needed pacman packages
-sudo pacman -S --needed --noconfirm \
-hyprcursor \
-hyprgraphics \
-hyprland \
-hyprland-qt-support \
-hyprland-qtutils \
-hyprlock \
-hyprpaper \
-hyprpicker \
-hyprpolkitagent \
-xdg-desktop-portal-hyprland \
-socat \
-jq \
-fd \
-nwg-look \
-ttf-jetbrains-mono-nerd \
-imagemagick \
-blueman \
-bluez \
-bluez-libs \
-bluez-utils \
-ttf-fira-code \
-eza \
-gvfs-smb \
-tumbler \
-xdg-user-dirs \
-flatpak \
-greetd \
-kitty \
-thunar \
-file-roller \
-thunar-archive-plugin \
-firefox \
-kate \
-bitwarden \
-cliphist \
-fzf \
-nano \
-fastfetch \
-networkmanager \
-network-manager-applet \
-cmake \
-meson \
-cpio \
-pkgconf \
-gparted \
-tlp \
-mesa \
-lib32-mesa \
-vulkan-radeon \
-lib32-vulkan-radeon \
-libva-utils \
-ntfs-3g \
-gnome-keyring \
-libsecret
+for package in ${packages[@]}; do
+    sudo pacman -S --noconfirm ${package}
+done
 
 #Enable Greetd service
 sudo systemctl enable greetd.service
@@ -101,26 +114,24 @@ cd ~/builds/Tela-icon-theme
 chmod +x install.sh
 ./install.sh grey
 
-#Install the yay packages
-yay -S --removemake --cleanafter \
-hypridle-git \
-hyprland-autoname-workspaces-git \
-hyprland-protocols-git \
-hyprlang-git \
-hyprsunset-git \
-hyprswitch \
-hyprutils-git \
-hyprwayland-scanner-git \
-brightnessctl \
-libinput-gestures \
-swayosd-git \
-qimgv-git \
-wofi \
-google-chrome \
-waybar \
-wlogout \
-wallust \
-asusctl
+yaypackages=(
+    hyprland-autoname-workspaces-git
+    hyprswitch
+    libinput-gestures
+    swayosd-git
+    qimgv-git
+    wofi
+    google-chrome
+    waybar
+    wlogout
+    wallust
+    asusctl
+)
+
+#Install the needed yay packages
+for yaypackage in ${yaypackages[@]}; do
+    yay -S --noconfirm --removemake --cleanafter ${yaypackage}
+done
 
 #Hyprbars
 hyprpm update
