@@ -9,7 +9,7 @@ rm "$LOG_FILE"
 rm "$HOME/autoyay.log.save"
 
 #Remove lock file
-rm "/var/lib/pacman/db.lck"
+sudo rm "/var/lib/pacman/db.lck"
 
 echo "------------------" > "$LOG_FILE"
 echo "PERFORMING UPGRADE" >> "$LOG_FILE"
