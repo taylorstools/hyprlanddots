@@ -164,6 +164,10 @@ cp -r ~/builds/hyprlanddots/home/.bashrc ~/
 #Copy the /etc files (/etc)
 sudo cp -r ~/builds/hyprlanddots/etc/* /etc/
 
+#Make scripts executable
+chmod +x ~/.config/hypr/scripts/*.sh
+chmod +x ~/.config/hypr/UserScripts/*.sh
+
 #Set defaults
 xdg-mime default thunar.desktop inode/directory
 xdg-mime default org.kde.kate.desktop application/json text/plain text/x-shellscript
