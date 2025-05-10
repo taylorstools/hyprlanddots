@@ -26,6 +26,14 @@ echo "" >> "$LOG_FILE"
 echo "UPGRADE COMPLETE." >> "$LOG_FILE"
 
 echo "" >> "$LOG_FILE"
+echo "-------------------" >> "$LOG_FILE"
+echo "HYPR PLUGINS UPDATE" >> "$LOG_FILE"
+echo "-------------------" >> "$LOG_FILE"
+echo "" >> "$LOG_FILE"
+
+hyprpm update -nn >> "$LOG_FILE"
+
+echo "" >> "$LOG_FILE"
 echo "-------" >> "$LOG_FILE"
 echo "CLEANUP" >> "$LOG_FILE"
 echo "-------" >> "$LOG_FILE"
