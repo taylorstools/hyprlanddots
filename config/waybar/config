@@ -12,6 +12,7 @@
         "custom/os_button",
         "custom/filesicon",
         "custom/termicon",
+        "custom/notesicon",
         "custom/browsericon",
         "hyprland/workspaces",
         "wlr/taskbar"
@@ -39,6 +40,11 @@
         "format": "",
         "on-click": "kitty",
         "tooltip-format": "Kitty"
+    },
+    "custom/notesicon": {
+        "format": "",
+        "on-click": "obsidian",
+        "tooltip-format": "Obsidian"
     },
     "custom/browsericon": {
         "format": "󰊯",
