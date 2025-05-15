@@ -59,7 +59,7 @@
         "on-scroll-down": "hyprctl dispatch workspace r-1"
     },
     "wlr/taskbar": {
-        "format": "{icon} {title:.12}",
+        "format": "{icon} {title:.15}",
         "icon-size": 22,
         "spacing": 3,
         "on-click-middle": "close",
