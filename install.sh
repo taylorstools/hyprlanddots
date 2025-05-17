@@ -173,6 +173,9 @@ xdg-mime default thunar.desktop inode/directory
 xdg-mime default org.kde.kate.desktop application/json text/plain text/x-shellscript
 xdg-mime default qimgv.desktop image/png image/jpeg
 
+#Install hyprshot-gui
+curl -fsSL https://raw.githubusercontent.com/s-adi-dev/hyprshot-gui/main/install.sh | bash
+
 #Enable tlp
 sudo systemctl enable --now tlp
 sudo tlp start
