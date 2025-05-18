@@ -32,6 +32,8 @@ echo "-------------------" >> "$LOG_FILE"
 echo "" >> "$LOG_FILE"
 
 hyprpm update -nn >> "$LOG_FILE"
+sleep 0.5
+hyprctl dismissnotify
 
 echo "" >> "$LOG_FILE"
 echo "-------" >> "$LOG_FILE"
