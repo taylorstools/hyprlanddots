@@ -73,6 +73,7 @@ packages=(
     gnome-keyring
     libsecret
     go
+    obsidian
 )
 
 #Install the needed pacman packages
@@ -127,6 +128,7 @@ yaypackages=(
     wlogout
     wallust
     asusctl
+    localsend-bin
 )
 
 #Install the needed yay packages
