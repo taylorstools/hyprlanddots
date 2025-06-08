@@ -3,106 +3,37 @@
 #Make it so user doesn't have to type password to use sudo
 echo "$USER ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
 
-#Rank mirrors
-sudo pacman -S reflector --noconfirm
-sudo reflector --latest 20 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+#Install nala
+sudo apt install nala -y
 
-#Perform upgrade
-sudo pacman -Syu
+#Fetch mirrors and save 10 fastest
+sudo nala fetch --fetches 10 --auto -y
+
+#Perform update and upgrade
+sudo nala update
+sudo nala upgrade -y
 
 packages=(
-    hyprcursor
-    hyprgraphics
-    hyprland
-    hyprland-qt-support
-    hyprland-qtutils
-    hyprlock
-    hyprpaper
-    hyprpicker
-    hyprpolkitagent
-    hypridle
-    hyprland-protocols
-    hyprlang
-    hyprsunset
-    hyprutils
-    hyprwayland-scanner
-    brightnessctl
-    xdg-desktop-portal-hyprland
-    socat
-    jq
-    fd
-    nwg-look
-    ttf-jetbrains-mono-nerd
-    imagemagick
-    blueman
-    bluez
-    bluez-libs
-    bluez-utils
-    ttf-fira-code
-    eza
-    gvfs-smb
-    tumbler
-    xdg-user-dirs
+    gdm3
+    gnome-shell
+    gnome-terminal
+    gnome-text-editor
+    nautilus
+    nautilus-extension-gnome-terminal
+    ffmpegthumbnailer
+    gnome-tweaks
+    git
     flatpak
-    greetd
-    kitty
-    thunar
-    file-roller
-    thunar-archive-plugin
-    firefox
-    kate
-    bitwarden
-    cliphist
-    fzf
-    nano
-    fastfetch
-    networkmanager
-    network-manager-applet
-    cmake
-    meson
-    cpio
-    pkgconf
-    gparted
-    tlp
-    mesa
-    lib32-mesa
-    vulkan-radeon
-    lib32-vulkan-radeon
-    libva-utils
-    ntfs-3g
-    gnome-keyring
-    libsecret
-    go
-    obsidian
 )
 
-#Install the needed pacman packages
+#Install packages with Nala
 for package in ${packages[@]}; do
-    sudo pacman -S --noconfirm ${package}
+    sudo nala install ${package} -y
 done
 
-#Enable Greetd service
-sudo systemctl enable greetd.service
-
-#Enable bluetooth service
-sudo systemctl enable bluetooth.service
-
-#Install yay (AUR helper)
-git clone https://aur.archlinux.org/yay.git ~/builds/yay
-cd ~/builds/yay
-makepkg -si
-
-#Create user directories in home folder
-xdg-user-dirs-update
-
-#Add Flatpak repo
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-
-#Install Mission Center flatpak
-flatpak install flathub io.missioncenter.MissionCenter
-
-#Install pwvucontrol flatpak
-flatpak install flathub com.saivert.pwvucontrol
+#Enable GDM
+sudo systemctl enable gdm
+sudo systemctl set-default graphical.target
 
 #Install Segoe UI font
 git clone https://github.com/mrbvrz/segoe-ui-linux ~/builds/segoe-ui-linux
@@ -116,76 +47,45 @@ cd ~/builds/Tela-icon-theme
 chmod +x install.sh
 ./install.sh grey
 
-yaypackages=(
-    hyprland-autoname-workspaces-git
-    hyprswitch
-    libinput-gestures
-    swayosd-git
-    qimgv-git
-    wofi
-    google-chrome
-    waybar
-    wlogout
-    wallust
-    asusctl
-    localsend-bin
-)
+#Enable fractional scaling in GNOME
+gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
 
-#Install the needed yay packages
-for yaypackage in ${yaypackages[@]}; do
-    yay -S --noconfirm --removemake --cleanafter ${yaypackage}
-done
+#Install Google Chrome
+sudo nala install software-properties-common apt-transport-https ca-certificates curl -y #Dependencies
+curl -fSsL https://dl.google.com/linux/linux_signing_key.pub | sudo gpg --dearmor | sudo tee /usr/share/keyrings/google-chrome.gpg >> /dev/null
+echo deb [arch=amd64 signed-by=/usr/share/keyrings/google-chrome.gpg] http://dl.google.com/linux/chrome/deb/ stable main | sudo tee /etc/apt/sources.list.d/google-chrome.list
+sudo nala update
+sudo nala install google-chrome-stable -y
 
-#Hyprbars
-hyprpm update
-hyprpm add https://github.com/hyprwm/hyprland-plugins
-hyprpm update
-hyprpm enable hyprbars
+#Install Firefox
+sudo nala install wget -y
+wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | sudo tee /etc/apt/keyrings/packages.mozilla.org.asc > /dev/null
+echo "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main" | sudo tee -a /etc/apt/sources.list.d/mozilla.list > /dev/null
+sudo nala update
+sudo nala install firefox -y
 
-#Add to input group for libinput-gestures
-sudo gpasswd -a $USER input
+#Enable flathub
+sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
-#And the video group too
-sudo gpasswd -a $USER video
-
-#Copy the .config dot files (~/.config)
-mkdir -p ~/.config/
-cp -r ~/builds/hyprlanddots/config/* ~/.config/
-
-#Copy the .local dot files (~/.local)
-mkdir -p ~/.local/
-cp -r ~/builds/hyprlanddots/.local/* ~/.local/
-
-#Copy the .icons dot files (~/.icons)
-mkdir -p ~/.icons/
-cp -r ~/builds/hyprlanddots/.icons/* ~/.icons/
-
-#Copy .bashrc to home (~)
-cp -r ~/builds/hyprlanddots/home/.bashrc ~/
+#Install Bitwarden
+flatpak install flathub com.bitwarden.desktop --noninteractive
 
 #Copy the /etc files (/etc)
-sudo cp -r ~/builds/hyprlanddots/etc/* /etc/
+sudo cp -r ~/builds/htpcdots/etc/* /etc/
 
-#Make scripts executable
-chmod +x ~/.config/hypr/scripts/*.sh
-chmod +x ~/.config/hypr/UserScripts/*.sh
+#Change GRUB_TIMEOUT to 0
+sudo sed -i 's/^GRUB_TIMEOUT=.*/GRUB_TIMEOUT=0/' /etc/default/grub
+#Update GRUB
+sudo update-grub
 
-#Set defaults
-xdg-mime default thunar.desktop inode/directory
-xdg-mime default org.kde.kate.desktop application/json text/plain text/x-shellscript
-xdg-mime default qimgv.desktop image/png image/jpeg
+#Turn on quiet boot
+sudo sed -i 's/^quiet_boot=".*"/quiet_boot="1"/' /etc/grub.d/10_linux
 
-#Install hyprshot-gui
-curl -fsSL https://raw.githubusercontent.com/s-adi-dev/hyprshot-gui/main/install.sh | bash
+#Remove GRUB Plymouth themes
+sudo rm -rf /usr/share/plymouth/themes
 
-#Enable tlp
-sudo systemctl enable --now tlp
-sudo tlp start
+#Rebuild initramfs
+sudo update-initramfs -k all -u -v
 
-#Enable NetworkManager
-sudo systemctl enable NetworkManager.service
-sudo systemctl enable iwd
-sudo systemctl disable wpa_supplicant
-
-echo
-echo DONE. You should reboot now.
+#Remove ifupdown and configure NetworkManager for GNOME
+sudo nala purge ifupdown -y
