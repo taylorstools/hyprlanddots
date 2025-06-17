@@ -22,6 +22,9 @@ yay -Syu --noconfirm --removemake --cleanafter >> "$LOG_FILE" 2>&1
 #Cleanup unused packages
 sudo pacman -R $(pacman -Qdtq) --noconfirm >> "$LOG_FILE"
 
+#Flatpak update
+flatpak update -y >> "$LOG_FILE"
+
 echo "" >> "$LOG_FILE"
 echo "UPGRADE COMPLETE." >> "$LOG_FILE"
 
