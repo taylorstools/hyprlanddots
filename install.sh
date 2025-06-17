@@ -131,9 +131,15 @@ yaypackages=(
     localsend-bin
 )
 
-#Install the needed yay packages
-for yaypackage in ${yaypackages[@]}; do
-    yay -S --noconfirm --removemake --cleanafter ${yaypackage}
+#Try to install all yay packages at once
+yay -S --noconfirm --removemake --cleanafter "${yaypackages[@]}"
+
+#Check for missing packages and install any that are found
+for pkg in "${yaypackages[@]}"; do
+    if ! pacman -Q "$pkg" &>/dev/null; then
+        echo "Retrying installation of missing package: $pkg"
+        yay -S --noconfirm --removemake --cleanafter "$pkg"
+    fi
 done
 
 #Hyprbars
