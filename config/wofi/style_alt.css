@@ -1,12 +1,13 @@
 @import "/home/taylor/.config/waybar/wallust/colors-waybar.css";
 
 window {
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0,0,0,0.9);
     opacity: 1;
+    border-radius: 12px 12px 0 0;
 }
 
 #outer-box {
-margin: 15px;
+margin: 0px;
 }
 
 #input {
@@ -47,6 +48,7 @@ border: 2px;
 min-width: 50px;
 max-width: 100px;
 color: @color13;
+font-size: 14px;
 }
 #entry:selected {
 background-color: rgba(255,255,255,0.2);
