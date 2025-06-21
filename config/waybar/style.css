@@ -202,6 +202,18 @@ tooltip label{
 	background: @bg_hover;
 }
 
+tooltip,
+#tray menu {
+	color: #fff;
+	background: rgba(0, 0, 0, 0.9);
+	border-radius: 12px;
+}
+
+#tray menu menuitem:hover, #tray menu menuitem:active {
+	background-color: rgba(255,255,255,0.15);
+	box-shadow: 0px 0px 5px rgba(255,255,255,0.2);
+}
+
 #pulseaudio {
 	font-family: "JetBrainsMono Nerd Font";
 	padding-left: 5px;
