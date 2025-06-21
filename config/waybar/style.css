@@ -1,7 +1,7 @@
 @import "/home/taylor/.config/waybar/wallust/colors-waybar.css";
 
 /*base background color*/
-@define-color bg_main rgba(0, 0, 0, 0.9);
+@define-color bg_main rgba(0, 0, 0, 0.8);
 @define-color bg_main_tooltip rgba(0, 0, 0, 0.7);
 
 /*base background color of selections */
@@ -134,7 +134,7 @@ tooltip label{
 }
 
 #taskbar button {
-	min-width: 120px;
+	min-width: 140px;
 	border-bottom: 3px solid @color2;
 	margin-left: 2px;
 	margin-right: 2px;
