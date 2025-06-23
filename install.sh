@@ -74,6 +74,7 @@ packages=(
     libsecret
     go
     obsidian
+    mission-center
 )
 
 #Install the needed pacman packages
@@ -81,16 +82,10 @@ for package in ${packages[@]}; do
     sudo pacman -S --noconfirm ${package}
 done
 
-#Enable Greetd service
-sudo systemctl enable greetd.service
-
-#Enable bluetooth service
-sudo systemctl enable bluetooth.service
-
 #Install yay (AUR helper)
 git clone https://aur.archlinux.org/yay.git ~/builds/yay
 cd ~/builds/yay
-makepkg -si
+makepkg -si --noconfirm --needed
 
 #Create user directories in home folder
 xdg-user-dirs-update
@@ -98,23 +93,26 @@ xdg-user-dirs-update
 #Add Flatpak repo
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-#Install Mission Center flatpak
-flatpak install flathub io.missioncenter.MissionCenter
+flatpakages=(
+    com.saivert.pwvucontrol
+)
 
-#Install pwvucontrol flatpak
-flatpak install flathub com.saivert.pwvucontrol
+#Install flatpak packages
+for package in ${flatpakages[@]}; do
+    flatpak install flathub ${package} --noninteractive
+done
 
 #Install Segoe UI font
-git clone https://github.com/mrbvrz/segoe-ui-linux ~/builds/segoe-ui-linux
-cd ~/builds/segoe-ui-linux
-chmod +x install.sh
-./install.sh
+#git clone https://github.com/mrbvrz/segoe-ui-linux ~/builds/segoe-ui-linux
+#cd ~/builds/segoe-ui-linux
+#chmod +x install.sh
+#./install.sh
 
 #Install Tela icons
-git clone https://github.com/vinceliuice/Tela-icon-theme ~/builds/Tela-icon-theme
-cd ~/builds/Tela-icon-theme
-chmod +x install.sh
-./install.sh grey
+#git clone https://github.com/vinceliuice/Tela-icon-theme ~/builds/Tela-icon-theme
+#cd ~/builds/Tela-icon-theme
+#chmod +x install.sh
+#./install.sh grey
 
 yaypackages=(
     hyprland-autoname-workspaces-git
@@ -184,14 +182,28 @@ xdg-mime default qimgv.desktop image/png image/jpeg
 #Install hyprshot-gui
 curl -fsSL https://raw.githubusercontent.com/s-adi-dev/hyprshot-gui/main/install.sh | bash
 
-#Enable tlp
-sudo systemctl enable --now tlp
+#GTK settings
+gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
+gsettings set org.gnome.desktop.interface cursor-size 24
+
+#Enable services
+services=(
+    greetd.service
+    bluetooth.service
+    tlp.service
+    NetworkManager.service
+)
+
+#Enable services
+for service in ${services[@]}; do
+    sudo systemctl enable --now ${service}
+done
+
 sudo tlp start
 
-#Enable NetworkManager
-sudo systemctl enable NetworkManager.service
-sudo systemctl enable iwd
-sudo systemctl disable wpa_supplicant
+#Network Manager config - was maybe more stable this way with Mediatek wifi
+#sudo systemctl enable iwd
+#sudo systemctl disable wpa_supplicant
 
 echo
-echo DONE. You should reboot now.
+echo -e "\e[33mDONE. You should reboot now.\e[0m"
