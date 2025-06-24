@@ -142,11 +142,11 @@ done
 
 #Hyprbars
 hyprpm update
-hyprpm add https://github.com/hyprwm/hyprland-plugins
+yes Y | hyprpm add https://github.com/hyprwm/hyprland-plugins
 hyprpm update
 hyprpm enable hyprbars
 
-#Add to input group for libinput-gestures
+#Add to input and video group for libinput-gestures
 sudo gpasswd -a $USER input
 
 #And the video group too
@@ -171,8 +171,8 @@ cp -r ~/builds/hyprlanddots/home/.bashrc ~/
 sudo cp -r ~/builds/hyprlanddots/etc/* /etc/
 
 #Make scripts executable
-chmod +x ~/.config/hypr/scripts/*.sh
-chmod +x ~/.config/hypr/UserScripts/*.sh
+chmod +x ~/.config/hypr/scripts/*
+chmod +x ~/.config/hypr/UserScripts/*
 
 #Set defaults
 xdg-mime default thunar.desktop inode/directory
@@ -185,20 +185,22 @@ curl -fsSL https://raw.githubusercontent.com/s-adi-dev/hyprshot-gui/main/install
 #GTK settings
 gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
 gsettings set org.gnome.desktop.interface cursor-size 24
+gsettings set org.gnome.desktop.interface font-name 'Segoe UI Regular 10'
 
 #Enable services
 services=(
     greetd.service
     bluetooth.service
-    tlp.service
     NetworkManager.service
 )
 
 #Enable services
 for service in ${services[@]}; do
-    sudo systemctl enable --now ${service}
+    sudo systemctl enable ${service}
 done
 
+#Enable TLP
+sudo systemctl enable --now tlp.service
 sudo tlp start
 
 #Network Manager config - was maybe more stable this way with Mediatek wifi
