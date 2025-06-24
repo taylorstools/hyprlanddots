@@ -22,8 +22,7 @@
     	"battery",
         "tray",
         "pulseaudio",
-        "clock",
-        "custom/power_button"
+        "clock"
     ],
     "custom/os_button": {
         "format": "󰣇",
