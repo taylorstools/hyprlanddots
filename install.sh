@@ -75,6 +75,7 @@ packages=(
     go
     obsidian
     mission-center
+    adw-gtk-theme
 )
 
 #Install the needed pacman packages
@@ -186,6 +187,11 @@ curl -fsSL https://raw.githubusercontent.com/s-adi-dev/hyprshot-gui/main/install
 gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
 gsettings set org.gnome.desktop.interface cursor-size 24
 gsettings set org.gnome.desktop.interface font-name 'Segoe UI Regular 10'
+gsettings set org.gnome.desktop.interface gtk-theme "adw-gtk3-dark"
+
+#Enable TLP
+sudo systemctl enable --now tlp.service
+sudo tlp start
 
 #Enable services
 services=(
@@ -198,10 +204,6 @@ services=(
 for service in ${services[@]}; do
     sudo systemctl enable ${service}
 done
-
-#Enable TLP
-sudo systemctl enable --now tlp.service
-sudo tlp start
 
 #Network Manager config - was maybe more stable this way with Mediatek wifi
 #sudo systemctl enable iwd
