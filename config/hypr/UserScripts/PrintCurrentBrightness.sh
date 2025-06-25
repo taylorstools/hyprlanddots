@@ -6,11 +6,14 @@ output=$(brightnessctl -m)
 # Extract the third field (current brightness value)
 brightness=$(echo "$output" | awk -F',' '{print $3}')
 
-# Write the current brightness to file
-echo "$brightness" > /tmp/currentbrightness
+# Get the dpmsStatus for monitor eDP-1
+dpms_status=$(hyprctl monitors | awk '/Monitor eDP-1/,/dpmsStatus/ { if ($1 == "dpmsStatus:") print $2 }')
 
-# Calculate half brightness, rounding up
-dimmed=$(awk -v val="$brightness" 'BEGIN { print int((val + 1) / 12) }')
+# Only proceed if brightness is not 0 and dpmsStatus is 1
+if [[ "$brightness" -ne 0 && "$dpms_status" -eq 1 ]]; then
+    echo "$brightness" > /tmp/currentbrightness
 
-# Write dimmed brightness to file
-echo "$dimmed" > /tmp/dimmedbrightness
+    dimmed=$(awk -v val="$brightness" 'BEGIN { print int((val + 1) / 12) }')
+
+    echo "$dimmed" > /tmp/dimmedbrightness
+fi

@@ -24,4 +24,4 @@ if [ "$battery_status" = "Charging" ]; then
 fi
 
 #Output the battery percentage and icon
-echo "$battery_icon  $battery_percentage%"
+echo "$battery_icon $battery_percentage%"
