@@ -75,7 +75,7 @@ packages=(
     go
     obsidian
     mission-center
-    adw-gtk-theme
+    #adw-gtk-theme
 )
 
 #Install the needed pacman packages
@@ -94,14 +94,13 @@ xdg-user-dirs-update
 #Add Flatpak repo
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-flatpakages=(
-    com.saivert.pwvucontrol
-)
+#flatpakages=(
+#)
 
 #Install flatpak packages
-for package in ${flatpakages[@]}; do
-    flatpak install flathub ${package} --noninteractive
-done
+#for package in ${flatpakages[@]}; do
+#    flatpak install flathub ${package} --noninteractive
+#done
 
 #Install Segoe UI font
 #git clone https://github.com/mrbvrz/segoe-ui-linux ~/builds/segoe-ui-linux
@@ -128,6 +127,7 @@ yaypackages=(
     wallust
     asusctl
     localsend-bin
+    pwvucontrol
 )
 
 #Try to install all yay packages at once
@@ -187,7 +187,7 @@ curl -fsSL https://raw.githubusercontent.com/s-adi-dev/hyprshot-gui/main/install
 gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
 gsettings set org.gnome.desktop.interface cursor-size 24
 gsettings set org.gnome.desktop.interface font-name 'Segoe UI Regular 10'
-gsettings set org.gnome.desktop.interface gtk-theme "adw-gtk3-dark"
+#gsettings set org.gnome.desktop.interface gtk-theme "adw-gtk3-dark"
 
 #Enable TLP
 sudo systemctl enable --now tlp.service
