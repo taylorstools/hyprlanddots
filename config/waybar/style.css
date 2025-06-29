@@ -225,6 +225,10 @@ tooltip,
 	color: @color13;
 }
 
+#pulseaudio.muted {
+	color: @color13;
+}
+
 #network {
 	padding-left: 3px;
 	padding-right: 3px;

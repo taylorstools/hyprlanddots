@@ -104,7 +104,7 @@
         "scroll-step": 10,
         "format": "{icon}",
         "tooltip-format": "{volume}%",
-        "format-muted": "<span color='#DC143C'> </span>",
+        "format-muted": " ",
         "format-icons": {
             "default": [
                 " ",
@@ -127,7 +127,7 @@
                 "months": "<span color='#ffffff'><b>{}</b></span>",
                 "days": "<span color='#ffffff'><b>{}</b></span>",
                 "weekdays": "<span color='#777777'><b>{}</b></span>",
-                "today": "<span color='#FDFA72'><b>{}</b></span>"
+                "today": "<span bgcolor='#ffffff' color='#000'><b>{}</b></span>"
             }
         },
         "actions": {
