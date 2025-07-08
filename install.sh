@@ -75,7 +75,8 @@ packages=(
     go
     obsidian
     mission-center
-    #adw-gtk-theme
+    adw-gtk-theme
+    zoxide
 )
 
 #Install the needed pacman packages
