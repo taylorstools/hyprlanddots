@@ -5,7 +5,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-#alias ls='ls --color=auto'
+alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias cls='clear'
 PS1='\[\033[36m\]\w > \[\033[0m\]'
@@ -99,3 +99,4 @@ alias ls='exa -a --icons --color=always --group-directories-first'
 alias ll='exa -alF --icons --color=always --group-directories-first'
 
 fastfetch --logo-type small
+eval "$(zoxide init --cmd cd bash)"
