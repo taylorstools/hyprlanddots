@@ -1,5 +1,8 @@
 #!/bin/bash
 
+dir="$HOME/.config/hypr/hypridle"
+mkdir -p $dir
+
 # Get brightness output
 output=$(brightnessctl -m)
 
@@ -17,11 +20,11 @@ lid=$(cat /proc/acpi/button/lid/LID/state | awk '{print $2}')
 
 # Only proceed if brightness is not 0 and dpmsStatus is 1
 if [[ "$brightness" -ne 0 && "$dpms_status" -eq 1 && "$lid" -eq "open" ]]; then
-    echo "$brightness" > /tmp/currentbrightness
+    echo "$brightness" > $dir/currentbrightness
 
-    echo "$kbdbrightness" > /tmp/kbdbrightness
+    echo "$kbdbrightness" > $dir/kbdbrightness
 
     dimmed=$(awk -v val="$brightness" 'BEGIN { print int((val + 1) / 30) }')
 
-    echo "$dimmed" > /tmp/dimmedbrightness
+    echo "$dimmed" > $dir/dimmedbrightness
 fi

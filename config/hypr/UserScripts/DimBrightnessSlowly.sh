@@ -1,7 +1,10 @@
 #!/bin/bash
 
+dir="$HOME/.config/hypr/hypridle"
+mkdir -p $dir
+
 # Read target raw brightness value
-dimmed_brightness=$(cat /tmp/dimmedbrightness)
+dimmed_brightness=$(cat $dir/dimmedbrightness)
 
 # Get max brightness (raw value)
 max_brightness=$(brightnessctl -c backlight m)
