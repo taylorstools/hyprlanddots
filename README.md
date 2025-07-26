@@ -8,7 +8,7 @@ After doing a minimal/server install of Arch Linux and you're at the TTY, login,
 sudo pacman -S --needed git base-devel
 git clone https://github.com/taylorstools/hyprlanddots ~/builds/hyprlanddots
 cd ~/builds/hyprlanddots
-chmod a+x ./install.sh
+chmod +x ./install.sh
 ./install.sh
 ```
 ## Setting up rEFInd Bootloader
