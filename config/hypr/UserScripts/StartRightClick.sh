@@ -1,6 +1,6 @@
 #!/bin/bash
 UserScripts="$HOME/.config/hypr/UserScripts"
-choice=$(printf "Run\nTerminal\nTerminal (Root)\nFile Explorer (Root)\nTask Manager\nDisk Management\nPower" | wofi --dmenu --lines=7 --width=10% --location=bottom_left --sort-order=alphabetical --conf="$HOME/.config/wofi/config_alt" --style="$HOME/.config/wofi/style_alt.css")
+choice=$(printf "Run\nTerminal\nTerminal (Root)\nFile Explorer (Root)\nTask Manager\nDisk Management\nPower" | wofi --dmenu --width=10% --location=bottom_left --sort-order=alphabetical --conf="$HOME/.config/wofi/config_alt" --style="$HOME/.config/wofi/style_alt.css")
 case "$choice" in
     "Run") kitty --title CheckRunner "$UserScripts/CheckRunner.sh" ;;
     "Terminal") kitty ;;
