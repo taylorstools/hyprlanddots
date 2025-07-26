@@ -39,6 +39,7 @@ packages=(
     bluez-libs
     bluez-utils
     ttf-fira-code
+    inter-font
     eza
     gvfs-smb
     tumbler
@@ -187,7 +188,7 @@ curl -fsSL https://raw.githubusercontent.com/s-adi-dev/hyprshot-gui/main/install
 #GTK settings
 gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
 gsettings set org.gnome.desktop.interface cursor-size 24
-gsettings set org.gnome.desktop.interface font-name 'Segoe UI Regular 10'
+gsettings set org.gnome.desktop.interface font-name 'Inter Display Light 10'
 #gsettings set org.gnome.desktop.interface gtk-theme "adw-gtk3-dark"
 
 #Enable TLP
