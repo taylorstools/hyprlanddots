@@ -59,7 +59,7 @@
         "on-scroll-down": "hyprctl dispatch workspace r-1"
     },
     "wlr/taskbar": {
-        "format": "{icon} {title:.15}",
+        "format": "{icon} {title:.18}",
         "icon-size": 22,
         "spacing": 3,
         "on-click-middle": "close",
@@ -77,9 +77,9 @@
             "critical": 5
         },
         "interval": 5,
-        "format": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
+        "format": "{icon}  {capacity}%",
+        "format-charging": "  {capacity}%",
+        "format-plugged": "  {capacity}%",
         "format-alt": "{time} {icon}",
         "format-icons": [
             "<span color='#DC143C'>󰂎</span>",
@@ -115,7 +115,7 @@
         "on-click": "pkill pwvucontrol || flatpak run com.saivert.pwvucontrol"
     },
     "clock": {
-        "format": "{:%I:%M %p\n%m/%d/%Y}",
+        "format": "{:%I:%M %p\n%m/%d/%y}",
         "justify": "right",
         "tooltip-format": "<tt>{calendar}</tt>",
         "calendar": {
