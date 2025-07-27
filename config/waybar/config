@@ -7,7 +7,7 @@
     "margin-bottom": -1,
     "passthrough": false,
     "pango_markup": true,
-    "height": 21,
+    "height": 35,
     "modules-left": [
         "custom/os_button",
         "custom/filesicon",
