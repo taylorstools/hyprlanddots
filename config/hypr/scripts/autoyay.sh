@@ -16,6 +16,7 @@ elapsed=0
 while (( elapsed <= max_wait )); do
     if ping -c 1 -W 2 google.com &> /dev/null; then
         echo "Network is up." >> "$LOG_FILE"
+        echo "" >> "$LOG_FILE"
 
         #Remove lock file
         sudo rm "/var/lib/pacman/db.lck"
@@ -41,11 +42,35 @@ while (( elapsed <= max_wait )); do
         echo "-------------------" >> "$LOG_FILE"
         echo "HYPR PLUGINS UPDATE" >> "$LOG_FILE"
         echo "-------------------" >> "$LOG_FILE"
-        echo "" >> "$LOG_FILE"
 
         hyprpm update -nn >> "$LOG_FILE"
         sleep 0.5
         hyprctl dismissnotify
+
+        # Check if plugin repo exists
+        initial_output=$(hyprpm list | sed -r "s/\x1B\[[0-9;]*[mK]//g")
+
+        if ! grep -q "Repository hyprland-plugins" <<< "$initial_output"; then
+            echo "" >> "$LOG_FILE"
+            echo "hyprland-plugins repo not found in hyprpm. Adding now..." >> "$LOG_FILE"
+            yes Y | hyprpm add https://github.com/hyprwm/hyprland-plugins >> "$LOG_FILE"
+            hyprpm update -nn >> "$LOG_FILE"
+            sleep 0.5
+            hyprctl dismissnotify
+        fi
+
+        # Get updated output
+        output=$(hyprpm list | sed -r "s/\x1B\[[0-9;]*[mK]//g")
+
+        # Enable hyprbars if needed
+        if grep -A1 "Plugin hyprbars" <<< "$output" | grep -q "enabled: false"; then
+            echo "" >> "$LOG_FILE"
+            echo "Hyprbars not enabled. Attempting to enable..." >> "$LOG_FILE"
+            echo "" >> "$LOG_FILE"
+            hyprpm enable hyprbars >> "$LOG_FILE"
+            sleep 0.5
+            hyprctl dismissnotify
+        fi
 
         echo "" >> "$LOG_FILE"
         echo "-------" >> "$LOG_FILE"
@@ -94,5 +119,6 @@ while (( elapsed <= max_wait )); do
     fi
 done
 
+echo "" >> "$LOG_FILE"
 echo "No network connection after $((max_wait/60)) minutes. Exiting." >> "$LOG_FILE"
 exit 1
