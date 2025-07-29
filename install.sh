@@ -143,11 +143,13 @@ for pkg in "${yaypackages[@]}"; do
     fi
 done
 
+# Removing 7/28. hyprpm doesn't work outside og hyprland.
+# autoyay.sh now automatically adds the plugins repo and enables hyprbars.
 #Hyprbars
-hyprpm update
-yes Y | hyprpm add https://github.com/hyprwm/hyprland-plugins
-hyprpm update
-hyprpm enable hyprbars
+#hyprpm update
+#yes Y | hyprpm add https://github.com/hyprwm/hyprland-plugins
+#hyprpm update
+#hyprpm enable hyprbars
 
 #Add to input and video group for libinput-gestures
 sudo gpasswd -a $USER input
