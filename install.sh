@@ -143,7 +143,7 @@ for pkg in "${yaypackages[@]}"; do
     fi
 done
 
-# Removing 7/28. hyprpm doesn't work outside og hyprland.
+# Removing 7/28. hyprpm doesn't work outside of hyprland.
 # autoyay.sh now automatically adds the plugins repo and enables hyprbars.
 #Hyprbars
 #hyprpm update
