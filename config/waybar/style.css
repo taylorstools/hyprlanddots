@@ -99,8 +99,8 @@ tooltip label{
 	color: @content_main;
 }
 #workspaces {
-	margin-right: 1.5px;
-	margin-left: 1.5px;
+	margin-right: 2px;
+	margin-left: 2px;
 	font-family: "JetBrainsMono Nerd Font Mono";
 }
 #workspaces button {
