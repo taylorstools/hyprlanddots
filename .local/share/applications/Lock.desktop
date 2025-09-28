@@ -2,10 +2,11 @@
 Name=Lock
 Comment=Lock system
 Icon=udiskie-lock
-Exec=/home/taylor/.config/hypr/UserScripts/wlogout.sh
+Exec=/home/taylor/.config/hypr/hyprscripts/wlogout.sh
 TryExec=wlogout
 Terminal=false
 Type=Application
 Categories=Settings;
 X-Desktop-File-Install-Version=0.28
 StartupNotify=false
+Path=

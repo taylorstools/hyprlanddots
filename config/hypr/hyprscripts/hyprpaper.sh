@@ -74,5 +74,5 @@ for file in "$wlogouticons"/*.png; do
 done
 
 #Refresh Waybar, etc.
-scriptsDir="$HOME/.config/hypr/scripts"
-$scriptsDir/Refresh.sh
+hyprscripts="$HOME/.config/hypr/hyprscripts"
+$hyprscripts/Refresh.sh

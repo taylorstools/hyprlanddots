@@ -28,7 +28,7 @@
     "custom/os_button": {
         "format": "󰣇",
         "on-click": "pkill wofi || wofi --show drun --normal-window",
-        "on-click-right": "pkill wofi || ~/.config/hypr/UserScripts/StartRightClick.sh",
+        "on-click-right": "pkill wofi || ~/.config/hypr/hyprscripts/StartRightClick.sh",
         "tooltip": false
     },
     "custom/filesicon": {
@@ -112,7 +112,7 @@
                 " "
             ]
         },
-        "on-click": "pkill pwvucontrol || flatpak run com.saivert.pwvucontrol"
+        "on-click": "pkill pwvucontrol || pwvucontrol"
     },
     "clock": {
         "format": "{:%I:%M %p\n%m/%d/%y}",

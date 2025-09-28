@@ -175,9 +175,8 @@ cp -r ~/builds/hyprlanddots/home/.bashrc ~/
 #Copy the /etc files (/etc)
 sudo cp -r ~/builds/hyprlanddots/etc/* /etc/
 
-#Make scripts executable
-chmod +x ~/.config/hypr/scripts/*
-chmod +x ~/.config/hypr/UserScripts/*
+#Make hyprscripts executable
+chmod +x ~/.config/hypr/hyprscripts/*
 
 #Set defaults
 xdg-mime default thunar.desktop inode/directory
@@ -212,6 +211,12 @@ done
 #Network Manager config - was maybe more stable this way with Mediatek wifi
 #sudo systemctl enable iwd
 #sudo systemctl disable wpa_supplicant
+
+#Set grub timeout to 0
+if command -v grub-mkconfig >/dev/null 2>&1; then
+  sudo sed -i 's/^GRUB_TIMEOUT=.*/GRUB_TIMEOUT=0/' /etc/default/grub
+  sudo grub-mkconfig -o /boot/grub/grub.cfg
+fi
 
 echo
 echo -e "\e[33mDONE. You should reboot now.\e[0m"

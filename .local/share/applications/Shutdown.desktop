@@ -2,7 +2,7 @@
 Name=Shutdown
 Comment=Shutdown system
 Icon=system-shutdown-panel
-Exec=/home/taylor/.config/hypr/UserScripts/wlogout.sh
+Exec=/home/taylor/.config/hypr/hyprscripts/wlogout.sh
 TryExec=wlogout
 Terminal=false
 Type=Application

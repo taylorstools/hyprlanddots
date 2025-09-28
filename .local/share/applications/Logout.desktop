@@ -2,7 +2,7 @@
 Name=Logout
 Comment=Logout system
 Icon=application-exit
-Exec=/home/taylor/.config/hypr/UserScripts/wlogout.sh
+Exec=/home/taylor/.config/hypr/hyprscripts/wlogout.sh
 TryExec=wlogout
 Terminal=false
 Type=Application

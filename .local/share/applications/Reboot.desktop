@@ -2,7 +2,7 @@
 Name=Reboot
 Comment=Reboot system
 Icon=vm-restart
-Exec=/home/taylor/.config/hypr/UserScripts/wlogout.sh
+Exec=/home/taylor/.config/hypr/hyprscripts/wlogout.sh
 TryExec=/home/taylor/.config/hypr/UserScripts/wlogout.sh
 Terminal=false
 Type=Application

@@ -24,7 +24,7 @@ if [[ "$brightness" -ne 0 && "$dpms_status" -eq 1 && "$lid" -eq "open" ]]; then
 
     echo "$kbdbrightness" > $dir/kbdbrightness
 
-    dimmed=$(awk -v val="$brightness" 'BEGIN { print int((val + 1) / 30) }')
+    dimmed=$(awk -v val="$brightness" 'BEGIN { print int((val + 1) / 20) }')
 
     echo "$dimmed" > $dir/dimmedbrightness
 fi

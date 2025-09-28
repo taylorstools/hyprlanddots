@@ -1,6 +1,6 @@
 {
     "label" : "lock",
-    "action" : "~/.config/hypr/scripts/LockScreen.sh",
+    "action" : "~/.config/hypr/hyprscripts/LockScreen.sh",
     "text" : "Lock",
     "keybind" : "l"
 }
@@ -12,7 +12,7 @@
 }
 {
     "label" : "sleep",
-    "action" : "~/.config/hypr/scripts/Sleep.sh",
+    "action" : "~/.config/hypr/hyprscripts/Sleep.sh",
     "text" : "Sleep",
     "keybind" : "z"
 }
@@ -30,7 +30,7 @@
 }
 {
     "label" : "windows",
-    "action" : "sudo ~/.config/hypr/UserScripts/boottowindows.sh",
+    "action" : "sudo ~/.config/hypr/hyprscripts/boottowindows.sh",
     "text" : "Windows",
     "keybind" : "w"
 }
