@@ -1,6 +1,6 @@
 @import "/home/taylor/.config/waybar/wallust/colors-waybar.css";
 
-@define-color theme_selected_bg_color @color13;
+@define-color theme_selected_bg_color @color15;
 
 * {
 outline: none;
@@ -9,14 +9,14 @@ outline: none;
 #input {
 border: 0;
 box-shadow: none;
-border-bottom: 2px solid @color13;
+border-bottom: 2px solid @color15;
 padding-bottom: 5px;
 }
 
 #input:focus {
 border: 0;
 box-shadow: none;
-border-bottom: 2px solid @color13;
+border-bottom: 2px solid @color15;
 }
 
 .thunar .view {
@@ -39,12 +39,12 @@ background-color: #000000;
 background-color: #000000;
 }
 .thunar .view:selected {
-background-color: @color13;
+background-color: @color15;
 color: #ffffff;
 }
 .thunar .view .rubberband {
 background: rgba(255,255,255,0.3);
-border-color: @color13;
+border-color: @color15;
 }
 .thunar menubar {
 background-color: #000000;

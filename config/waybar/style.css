@@ -30,8 +30,8 @@
 	/* font-family: "Segoe UI", "Ubuntu"; */
   font-weight: 400;
  /* font-size: 14px;*/
-	
-	
+
+
 }
 
 window#waybar {
@@ -62,8 +62,8 @@ tooltip label{
 }
 #custom-os_button:hover {
 	background-color: rgba(255, 255, 255, 0.1);
-	color: @color13;
-	text-shadow: 0px 0px 5px @color13;
+	color: @color15;
+	text-shadow: 0px 0px 5px @color15;
 }
 
 #custom-filesicon, #custom-termicon, #custom-browsericon, #custom-notesicon {
@@ -77,8 +77,8 @@ tooltip label{
 
 #custom-filesicon:hover, #custom-termicon:hover, #custom-browsericon:hover, #custom-notesicon:hover {
 	/*background-color: rgba(255, 255, 255, 0.1);*/
-	color: @color13;
-	text-shadow: 0px 0px 5px @color13;
+	color: @color15;
+	text-shadow: 0px 0px 5px @color15;
 }
 #custom-filesicon, #custom-termicon, #custom-notesicon {
 	padding-right: 8px;
@@ -98,36 +98,22 @@ tooltip label{
   background:  @bg_hover;
 	color: @content_main;
 }
-#workspaces {
-	margin-right: 2px;
-	margin-left: 2px;
-	font-family: "JetBrainsMono Nerd Font Mono";
-}
+
 #workspaces button {
-	color: @color2;
-	padding: 3px;
-	transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
-	font-size: 18px;
-	padding-left: 10px;
-	padding-right: 10px;
-	letter-spacing: -4px;
+border-radius: 150px;
+background-color: #333333;
+min-height: 5px;
+min-width: 5px;
 }
+
 #workspaces button.active {
-	color: @color13;
-	border-bottom: 3px solid @color13;
-	background-color: @content_inactive;
+background-color: #88bbff;
+min-height: 5px;
+min-width: 10px;
 }
-#workspaces button.focused {
-  color: @bg_active;
-}
-#workspaces button.urgent {
-	color: @color2;
-	background-color: @color13
-	/* color: @warning_color; */
-}
-#workspaces button:hover {
-  background: @bg_hover;
-  color: @color13;
+
+#workspaces button:hover { /* This is optional */
+background-color: #88bbff;
 }
 
 #taskbar {
@@ -137,7 +123,7 @@ tooltip label{
 
 #taskbar button {
 	min-width: 140px;
-	border-bottom: 3px solid @color2;
+	border-bottom: 3px solid @color6;
 	margin-left: 2px;
 	margin-right: 2px;
 	padding-left: 8px;
@@ -153,12 +139,12 @@ tooltip label{
 }
 
 #taskbar button.active {
-	border-bottom: 3px solid @color13;
+	border-bottom: 3px solid @color15;
 	background: @bg_active;
 }
 
 #taskbar button:hover {
-	border-bottom: 3px solid @color13;
+	border-bottom: 3px solid @color15;
 	background: @bg_hover;
 	color: @content_main;
 }
@@ -231,11 +217,11 @@ tooltip,
 }
 #pulseaudio:hover {
  	background: @bg_hover;
-	color: @color13;
+	color: @color15;
 }
 
 #pulseaudio.muted {
-	color: @color13;
+	color: @color15;
 }
 
 #network {
@@ -257,5 +243,5 @@ tooltip,
 }
 #clock:hover {
 	background: @bg_hover;
-	color: @color13;
+	color: @color15;
 }

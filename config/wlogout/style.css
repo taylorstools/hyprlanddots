@@ -72,12 +72,12 @@ Buttons
 	margin: 10px;
 	border-radius: 20px;
 	background-image: image(url("icons/light/lock.png"));
-	color: @color13;
+	color: @color6;
 	background-size: 60px;
 }
 #lock:hover {
 	background-image: image(url("icons/hover/lock.png"));
-	color: @foreground;
+	color: @color15;
 	background-size: 85px;
 }
 
@@ -85,12 +85,12 @@ Buttons
 	margin: 10px;
 	border-radius: 20px;
 	background-image: image(url("icons/light/logout.png"));
-	color: @color13;
+	color: @color6;
 	background-size: 60px;
 }
 #logout:hover {
 	background-image: image(url("icons/hover/logout.png"));
-	color: @foreground;
+	color: @color15;
 	background-size: 85px;
 }
 
@@ -98,12 +98,12 @@ Buttons
 	margin: 10px;
 	border-radius: 20px;
 	background-image: image(url("icons/light/sleep.png"));
-	color: @color13;
+	color: @color6;
 	background-size: 60px;
 }
 #sleep:hover {
 	background-image: image(url("icons/hover/sleep.png"));
-	color: @foreground;
+	color: @color15;
 	background-size: 85px;
 }
 
@@ -111,12 +111,12 @@ Buttons
 	margin: 10px;
 	border-radius: 20px;
 	background-image: image(url("icons/light/shutdown.png"));
-	color: @color13;
+	color: @color6;
 	background-size: 60px;
 }
 #shutdown:hover {
 	background-image: image(url("icons/hover/shutdown.png"));
-	color: @foreground;
+	color: @color15;
 	background-size: 85px;
 }
 
@@ -124,12 +124,12 @@ Buttons
 	margin: 10px;
 	border-radius: 20px;
 	background-image: image(url("icons/light/reboot.png"));
-	color: @color13;
+	color: @color6;
 	background-size: 60px;
 }
 #reboot:hover {
 	background-image: image(url("icons/hover/reboot.png"));
-	color: @foreground;
+	color: @color15;
 	background-size: 85px;
 }
 
@@ -137,11 +137,11 @@ Buttons
 	margin: 10px;
 	border-radius: 20px;
 	background-image: image(url("icons/light/windows.png"));
-	color: @color13;
+	color: @color6;
 	background-size: 60px;
 }
 #windows:hover {
 	background-image: image(url("icons/hover/windows.png"));
-	color: @foreground;
+	color: @color15;
 	background-size: 85px;
 }

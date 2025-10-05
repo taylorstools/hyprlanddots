@@ -43,11 +43,11 @@ config_file="$HOME/.config/hypr/wallust/wallust-hyprland.conf"
 #Variable for icons folder
 wlogouticons="$HOME/.config/wlogout/icons/originals"
 
-#Extract color13 value and convert it to a hex format
-color13=$(grep '^\$color13' "$config_file" | sed -E 's/\$color13 = rgb\((.*)\)/#\1/')
+#Extract color15 value and convert it to a hex format
+color15=$(grep '^\$color15' "$config_file" | sed -E 's/\$color15 = rgb\((.*)\)/#\1/')
 
-#Same for foreground color
-foreground=$(grep '^\$foreground' "$config_file" | sed -E 's/\$foreground = rgb\((.*)\)/#\1/')
+#Same for color6
+color6=$(grep '^\$color6' "$config_file" | sed -E 's/\$color6 = rgb\((.*)\)/#\1/')
 
 #CREATE LIGHT COLOR VERSIONS
 #Ensure output directory exists
@@ -58,7 +58,7 @@ mkdir -p "$wlogouticonslight"
 # Process each PNG file
 for file in "$wlogouticons"/*.png; do
     filename=$(basename "$file")
-    magick "$file" -fill "$color13" -opaque "#FFFFFF" "$wlogouticonslight/$filename"
+    magick "$file" -fill "$color6" -opaque "#FFFFFF" "$wlogouticonslight/$filename"
 done
 
 #CREATE HOVER COLOR VERSIONS
@@ -70,7 +70,7 @@ mkdir -p "$wlogouticonshover"
 # Process each PNG file
 for file in "$wlogouticons"/*.png; do
     filename=$(basename "$file")
-    magick "$file" -fill "$foreground" -opaque "#FFFFFF" "$wlogouticonshover/$filename"
+    magick "$file" -fill "$color15" -opaque "#FFFFFF" "$wlogouticonshover/$filename"
 done
 
 #Refresh Waybar, etc.
