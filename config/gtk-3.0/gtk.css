@@ -39,12 +39,12 @@ background-color: #000000;
 background-color: #000000;
 }
 .thunar .view:selected {
-background-color: @color15;
+background-color: @color6;
 color: #ffffff;
 }
 .thunar .view .rubberband {
 background: rgba(255,255,255,0.3);
-border-color: @color15;
+border-color: @color6;
 }
 .thunar menubar {
 background-color: #000000;
